@@ -2,17 +2,28 @@ package finnali.horseshoes.item;
 
 import finnali.horseshoes.FinnsHorseshoes;
 import net.minecraft.core.Registry;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.equipment.Equippable;
 
 import java.util.function.Function;
 
 public class ModItems {
 
     public static void initialize() {
-        HORSESHOE = register("horseshoe", Item::new, new Item.Properties());
+        HORSESHOE = register("horseshoe", Item::new, new Item.Properties()
+                .stacksTo(1)
+                .component(
+                        DataComponents.EQUIPPABLE,
+                        Equippable.builder(EquipmentSlot.FEET)
+                                .setAllowedEntities(EntityType.HORSE)
+                                .build()
+                ));
     }
 
     public static <T extends Item> T register(

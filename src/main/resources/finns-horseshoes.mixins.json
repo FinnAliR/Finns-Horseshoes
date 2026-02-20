@@ -3,7 +3,8 @@
 	"package": "finnali.horseshoes.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
-		"ExampleMixin"
+		"AbstractHorseMixin",
+		"HorseInventoryMenuMixin"
 	],
 	"injectors": {
 		"defaultRequire": 1
