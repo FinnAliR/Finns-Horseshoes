@@ -1,6 +1,6 @@
 package finnali.horseshoes.item;
 
-import finnali.horseshoes.Horseshoes;
+import finnali.horseshoes.FinnsHorseshoes;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
@@ -20,7 +20,7 @@ public class ModItems {
             Function<Item.Properties, T> factory,
             Item.Properties props
     ) {
-        Identifier id = Identifier.fromNamespaceAndPath(Horseshoes.MOD_ID, name);
+        Identifier id = Identifier.fromNamespaceAndPath(FinnsHorseshoes.MOD_ID, name);
 
         // Correct: create the entry key using the registry instance's key
         ResourceKey<Item> key = ResourceKey.create(BuiltInRegistries.ITEM.key(), id);

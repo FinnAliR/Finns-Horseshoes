@@ -1,11 +1,11 @@
 {
 	"schemaVersion": 1,
-	"id": "finns-horseshoes",
+	"id": "finns_horseshoes",
 	"version": "${version}",
 	"name": "Finn's Horseshoes",
-	"description": "This is an example description! Tell everyone what your mod is about!",
+	"description": "Adds Horseshoes to Minecraft!",
 	"authors": [
-		"Me!"
+		"Finn"
 	],
 	"contact": {
 		"homepage": "https://fabricmc.net/",
@@ -20,6 +20,9 @@
 		],
 		"fabric-datagen": [
 			"finnali.horseshoes.FinnsHorseshoesDataGenerator"
+		],
+		"client": [
+			"finnali.horseshoes.HorseshoesClient"
 		]
 	},
 	"mixins": [
