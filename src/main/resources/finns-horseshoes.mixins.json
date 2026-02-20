@@ -6,6 +6,12 @@
 		"AbstractHorseMixin",
 		"HorseInventoryMenuMixin"
 	],
+	"client": [
+		"client.AbstractEquineModelAccessor",
+		"client.HorseRenderStateMixin",
+		"client.HorseRendererMixin",
+		"client.LivingEntityRendererAccessor"
+	],
 	"injectors": {
 		"defaultRequire": 1
 	},

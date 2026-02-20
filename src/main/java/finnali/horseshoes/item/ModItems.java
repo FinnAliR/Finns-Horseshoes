@@ -13,6 +13,7 @@ import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.component.ItemAttributeModifiers;
+import net.minecraft.world.item.equipment.EquipmentAssets;
 import net.minecraft.world.item.equipment.Equippable;
 
 import java.util.function.Function;
@@ -40,6 +41,7 @@ public class ModItems {
                 .component(
                         DataComponents.EQUIPPABLE,
                         Equippable.builder(EquipmentSlot.FEET)
+                                .setAsset(EquipmentAssets.GOLD)
                                 .setAllowedEntities(EntityType.HORSE)
                                 .build()
                 ));
