@@ -7,8 +7,12 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.EquipmentSlotGroup;
 import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.ai.attributes.AttributeModifier;
+import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.component.ItemAttributeModifiers;
 import net.minecraft.world.item.equipment.Equippable;
 
 import java.util.function.Function;
@@ -17,7 +21,22 @@ public class ModItems {
 
     public static void initialize() {
         HORSESHOE = register("horseshoe", Item::new, new Item.Properties()
-                .stacksTo(1)
+                .durability(165)
+                .enchantable(15)
+                .component(
+                        DataComponents.ATTRIBUTE_MODIFIERS,
+                        ItemAttributeModifiers.builder()
+                                .add(
+                                        Attributes.ARMOR,
+                                        new AttributeModifier(
+                                                Identifier.fromNamespaceAndPath(FinnsHorseshoes.MOD_ID, "horseshoe_armor_bonus"),
+                                                2.0,
+                                                AttributeModifier.Operation.ADD_VALUE
+                                        ),
+                                        EquipmentSlotGroup.FEET
+                                )
+                                .build()
+                )
                 .component(
                         DataComponents.EQUIPPABLE,
                         Equippable.builder(EquipmentSlot.FEET)
