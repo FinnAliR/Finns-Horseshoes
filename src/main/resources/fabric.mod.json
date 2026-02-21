@@ -12,17 +12,11 @@
 		"sources": "https://github.com/FabricMC/fabric-example-mod"
 	},
 	"license": "CC0-1.0",
-	"icon": "assets/finns-horseshoes/icon.png",
+	"icon": "assets/finns_horseshoes/icon.png",
 	"environment": "*",
 	"entrypoints": {
 		"main": [
 			"finnali.horseshoes.FinnsHorseshoes"
-		],
-		"fabric-datagen": [
-			"finnali.horseshoes.FinnsHorseshoesDataGenerator"
-		],
-		"client": [
-			"finnali.horseshoes.HorseshoesClient"
 		]
 	},
 	"mixins": [

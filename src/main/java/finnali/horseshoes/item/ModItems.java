@@ -53,16 +53,10 @@ public class ModItems {
             Item.Properties props
     ) {
         Identifier id = Identifier.fromNamespaceAndPath(FinnsHorseshoes.MOD_ID, name);
-
-        // Correct: create the entry key using the registry instance's key
         ResourceKey<Item> key = ResourceKey.create(BuiltInRegistries.ITEM.key(), id);
-
         T item = factory.apply(props.setId(key));
-
-        // Register using id (simplest + most consistent)
         Registry.register(BuiltInRegistries.ITEM, id, item);
-
         return item;
     }
-    public static Item HORSESHOE;// = register("horseshoe", Item::new, new Item.Properties());
+    public static Item HORSESHOE;
 }

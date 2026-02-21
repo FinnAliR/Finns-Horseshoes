@@ -16,7 +16,6 @@ public class HorseShoesModel extends EntityModel<HorseRenderState> {
     private static final String RIGHT_FRONT_SHOE = "right_front_shoe";
     private static final String LEFT_HIND_SHOE = "left_hind_shoe";
     private static final String RIGHT_HIND_SHOE = "right_hind_shoe";
-    private static final float GLOBAL_X_ALIGNMENT = 0.0F;
     private static final float FRONT_Z_ALIGNMENT = -0.875F;
     private static final float HIND_Z_ALIGNMENT = 0.8125F;
 
@@ -39,11 +38,6 @@ public class HorseShoesModel extends EntityModel<HorseRenderState> {
         copyPose(horseModel.finnshorseshoes$getRightFrontLeg(), this.rightFrontShoe);
         copyPose(horseModel.finnshorseshoes$getLeftHindLeg(), this.leftHindShoe);
         copyPose(horseModel.finnshorseshoes$getRightHindLeg(), this.rightHindShoe);
-
-        this.leftFrontShoe.x += GLOBAL_X_ALIGNMENT;
-        this.rightFrontShoe.x += GLOBAL_X_ALIGNMENT;
-        this.leftHindShoe.x += GLOBAL_X_ALIGNMENT;
-        this.rightHindShoe.x += GLOBAL_X_ALIGNMENT;
 
         this.leftFrontShoe.z += FRONT_Z_ALIGNMENT;
         this.rightFrontShoe.z += FRONT_Z_ALIGNMENT;
