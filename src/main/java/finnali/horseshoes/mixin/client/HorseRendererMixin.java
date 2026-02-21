@@ -1,13 +1,10 @@
 package finnali.horseshoes.mixin.client;
 
 import finnali.horseshoes.client.HorseShoesLayer;
+import finnali.horseshoes.client.HorseShoesModel;
 import finnali.horseshoes.client.HorseShoesRenderStateAccess;
-import net.minecraft.client.model.HumanoidModel;
-import net.minecraft.client.model.geom.ModelLayers;
-import net.minecraft.client.renderer.entity.ArmorModelSet;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.HorseRenderer;
-import net.minecraft.client.renderer.entity.state.HumanoidRenderState;
 import net.minecraft.client.renderer.entity.state.HorseRenderState;
 import net.minecraft.world.entity.animal.equine.Horse;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -21,12 +18,10 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 public abstract class HorseRendererMixin {
     @Inject(method = "<init>", at = @At("TAIL"))
     private void finnshorseshoes$addLayer(EntityRendererProvider.Context context, CallbackInfo ci) {
-        ArmorModelSet<HumanoidModel<HumanoidRenderState>> armorModels = ArmorModelSet.bake(ModelLayers.PLAYER_ARMOR, context.getModelSet(), HumanoidModel::new);
         ((LivingEntityRendererAccessor) this).finnshorseshoes$getLayers().add(
                 new HorseShoesLayer(
                         (HorseRenderer) (Object) this,
-                        context.getEquipmentRenderer(),
-                        armorModels.get(EquipmentSlot.FEET)
+                        new HorseShoesModel()
                 )
         );
     }
