@@ -5,6 +5,7 @@
 	"mixins": [
 		"AbstractFurnaceBlockEntityMixin",
 		"AbstractHorseMixin",
+		"AbstractMountInventoryMenuMixin",
 		"HorseInventoryMenuMixin",
 		"PiglinAiMixin"
 	],
