@@ -1,5 +1,6 @@
 package finnali.horseshoes.mixin;
 
+import finnali.horseshoes.FinnsHorseshoes;
 import finnali.horseshoes.item.ModItems;
 import net.minecraft.resources.Identifier;
 import net.minecraft.world.Container;
@@ -54,7 +55,7 @@ public abstract class HorseInventoryMenuMixin extends AbstractContainerMenu {
 
             @Override
             public Identifier getNoItemIcon() {
-                return Identifier.withDefaultNamespace("container/slot/horse_armor");
+                return Identifier.fromNamespaceAndPath(FinnsHorseshoes.MOD_ID, "container/slot/horseshoe");
             }
         });
     }

@@ -3,11 +3,13 @@
 	"package": "finnali.horseshoes.mixin",
 	"compatibilityLevel": "JAVA_21",
 	"mixins": [
+		"AbstractFurnaceBlockEntityMixin",
 		"AbstractHorseMixin",
 		"HorseInventoryMenuMixin"
 	],
 	"client": [
 		"client.AbstractEquineModelAccessor",
+		"client.AbstractMountInventoryScreenMixin",
 		"client.HorseRenderStateMixin",
 		"client.HorseRendererMixin",
 		"client.LivingEntityRendererAccessor"
